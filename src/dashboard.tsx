@@ -28,28 +28,34 @@ const Dashboard: React.FC = () => {
     }
   };
 
+  const handleBackToLogin = () => {
+    navigate('/login');
+  };
+
   return (
     <div className="container d-flex justify-content-center align-items-center vh-100">
-      <div className="card p-5" style={{ maxWidth: '500px', width: '100%' }}>
-        <div className="text-center mb-4">
-          <h1 className="display-4">🎉</h1>
-          <h2 className="card-title">Welcome to Dashboard!</h2>
-        </div>
-        
-        <div className="alert alert-success">
-          <strong>Successfully logged in!</strong>
-        </div>
+      <div className="card p-4" style={{ maxWidth: '400px', width: '100%' }}>
+        <h3 className="card-title text-center mb-4">Welcome to Dashboard</h3>
         
         <div className="mb-4">
           <p><strong>Email:</strong> {userEmail}</p>
-          <p><strong>Status:</strong> <span className="badge bg-success">Email Verified</span></p>
+          <p>
+            <strong>Status:</strong>{' '}
+            <span className="badge bg-success">Email Verified</span>
+          </p>
         </div>
 
         <div className="d-grid gap-2">
-          <button className="btn btn-primary" onClick={() => alert('Dashboard feature coming soon!')}>
-            Go to Profile
+          <button 
+            className="btn btn-primary" 
+            onClick={handleBackToLogin}
+          >
+            Back to Login
           </button>
-          <button className="btn btn-outline-danger" onClick={handleLogout}>
+          <button 
+            className="btn btn-outline-danger" 
+            onClick={handleLogout}
+          >
             Logout
           </button>
         </div>
